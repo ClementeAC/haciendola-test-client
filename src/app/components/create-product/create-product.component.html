@@ -1,0 +1,95 @@
+<!-- Edit Mode -->
+<div class="container mt-4">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a [routerLink]="['/dashboard']">Dashboard</a>
+      </li>
+    </ol>
+  </nav>
+  <h2>Create Product</h2>
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Ingrese Handle"
+      [(ngModel)]="product.handle"
+    />
+    <label>Handle</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Ingrese título"
+      [(ngModel)]="product.title"
+    />
+    <label>Título</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Ingrese SKU"
+      [(ngModel)]="product.sku"
+    />
+    <label>SKU</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Ingrese Precio"
+      [(ngModel)]="product.price"
+    />
+    <label>Precio</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Ingrese Gramos"
+      [(ngModel)]="product.grams"
+    />
+    <label>Gramos</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Ingrese Código de Barras"
+      [(ngModel)]="product.barcode"
+    />
+    <label>Código de Barras</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Ingrese Precio de Comparable"
+      [(ngModel)]="product.comparePrice"
+    />
+    <label>Precio de Comparable</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Ingrese Stock"
+      [(ngModel)]="product.stock"
+    />
+    <label>Stock</label>
+  </div>
+  <div class="mb-3">
+    <label for="description" class="form-label">Descripción</label>
+    <textarea
+      class="form-control"
+      id="description"
+      rows="6"
+      [(ngModel)]="product.description"
+    ></textarea>
+  </div>
+  <div class="buttons">
+    <button class="btn btn-success" (click)="saveChanges()">Save</button>
+  </div>
+</div>

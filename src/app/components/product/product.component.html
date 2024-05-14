@@ -1,0 +1,138 @@
+<app-navbar></app-navbar>
+
+<!-- View Mode -->
+<div class="container mt-4" *ngIf="!isEditing && product.id !== 0">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a [routerLink]="['/dashboard']">Dashboard</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        {{ product.handle }}
+      </li>
+    </ol>
+  </nav>
+  <h2>{{ product.title }}</h2>
+  <p [innerHTML]="product.description"></p>
+  <p><b>Handle:</b> {{ product.handle }}</p>
+  <p><b>SKU:</b> {{ product.sku }}</p>
+  <p><b>Grams:</b> {{ product.grams }} g</p>
+  <p><b>Stocks:</b> {{ product.stock }} pcs</p>
+  <p><b>Price:</b> ${{ product.price }}</p>
+  <p><b>Compare Price:</b> ${{ product.comparePrice }}</p>
+  <p *ngIf="product.barcode"><b>Barcode:</b> {{ product.barcode }}</p>
+
+  <div class="mt-4 buttons">
+    <button class="btn btn-primary mr-2" (click)="startEditing()">Edit</button>
+    <button class="btn btn-outline-danger" (click)="deleteProduct()">
+      Delete
+    </button>
+  </div>
+</div>
+
+<!-- Edit Mode -->
+<div class="container mt-4" *ngIf="isEditing && product.id !== 0">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a [routerLink]="['/dashboard']">Dashboard</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        {{ product.handle }}
+      </li>
+    </ol>
+  </nav>
+  <h2>Edit Product</h2>
+  <p>Product ID: {{ product.id }}</p>
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Ingrese Handle"
+      [(ngModel)]="product.handle"
+    />
+    <label>Handle</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Ingrese título"
+      [(ngModel)]="product.title"
+    />
+    <label>Título</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Ingrese SKU"
+      [(ngModel)]="product.sku"
+    />
+    <label>SKU</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Ingrese Precio"
+      [(ngModel)]="product.price"
+    />
+    <label>Precio</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Ingrese Gramos"
+      [(ngModel)]="product.grams"
+    />
+    <label>Gramos</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Ingrese Código de Barras"
+      [(ngModel)]="product.barcode"
+    />
+    <label>Código de Barras</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Ingrese Precio de Comparable"
+      [(ngModel)]="product.comparePrice"
+    />
+    <label>Precio de Comparable</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Ingrese Stock"
+      [(ngModel)]="product.stock"
+    />
+    <label>Stock</label>
+  </div>
+  <div class="mb-3">
+    <label for="description" class="form-label">Descripción</label>
+    <textarea
+      class="form-control"
+      id="description"
+      rows="6"
+      [(ngModel)]="product.description"
+    ></textarea>
+  </div>
+  <div class="buttons">
+    <button class="btn btn-success" (click)="saveChanges()">Save</button>
+    <button class="btn btn-outline-secondary" (click)="cancelEditing()">
+      Cancel
+    </button>
+  </div>
+</div>
+
+<div class="spinner">
+  <app-spinner *ngIf="product.id === 0"></app-spinner>
+</div>

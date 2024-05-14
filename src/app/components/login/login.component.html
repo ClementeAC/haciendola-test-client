@@ -1,0 +1,32 @@
+<div class="wrapper">
+  <div class="body" *ngIf="!loading">
+    <h1 class="mb-3">Iniciar Sesión</h1>
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Ingrese Usuario"
+        [(ngModel)]="username"
+      />
+      <label>Usuario</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input
+        type="password"
+        class="form-control"
+        placeholder="Ingrese Contraseña"
+        [(ngModel)]="password"
+      />
+      <label>Contraseña</label>
+    </div>
+    <div class="d-grid gap-2">
+      <button type="button" class="btn btn-dark btn-lg" (click)="logIn()">
+        Ingresar
+      </button>
+    </div>
+    <p class="mt-4">
+      No tienes cuenta? <a [routerLink]="['/signin']">Registrate</a>
+    </p>
+  </div>
+  <app-spinner *ngIf="loading"></app-spinner>
+</div>
