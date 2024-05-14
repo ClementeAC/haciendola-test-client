@@ -1,27 +1,36 @@
-# Client
+# Aplicación web Angular con Bootstrap
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.0.
+Esta es una aplicación web desarrollada en Angular con Bootstrap. Proporciona funcionalidades de inicio de sesión, creación de usuarios y manejo CRUD de productos. Esta aplicación fue desarrollada como parte de una prueba técnica.
 
-## Development server
+## Requisitos previos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Antes de ejecutar la aplicación en tu entorno local, asegúrate de seguir estos pasos:
 
-## Code scaffolding
+1. Cambia el puerto del backend en los siguientes archivos:
+   - src/app/services/product.service.ts (línea 14)
+   - src/app/services/user.service.ts (línea 14)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2. Instala las dependencias utilizando el comando:
 
-## Build
+npm install
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Ejecución
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Para ejecutar la aplicación en tu entorno local, sigue estos pasos:
 
-## Running end-to-end tests
+1. Inicia el servidor de desarrollo utilizando el comando:
+ng serve
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+O, si prefieres utilizar npm:
+npm run start
 
-## Further help
+2. Abre tu navegador web y accede a la siguiente URL:
+http://localhost:4200
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Prueba técnica
+
+Puedes encontrar la prueba técnica en el siguiente enlace:
+[Enlace a la prueba técnica](https://drive.google.com/file/d/1n5pdMNEt3OsIep-FXoe58nJQsQdUvCkk/view)
+
+¡Disfruta utilizando la aplicación web! En mi perfil podrás encontrar el servidor correspondiente.
