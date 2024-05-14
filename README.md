@@ -7,12 +7,12 @@ Esta es una aplicación web desarrollada en Angular con Bootstrap. Proporciona f
 Antes de ejecutar la aplicación en tu entorno local, asegúrate de seguir estos pasos:
 
 1. Cambia el puerto del backend en los siguientes archivos:
-   - src/app/services/product.service.ts (línea 14)
-   - src/app/services/user.service.ts (línea 14)
+     - src/app/services/product.service.ts (línea 14)
+     - src/app/services/user.service.ts (línea 14)
 
 2. Instala las dependencias utilizando el comando:
 
-npm install
+        npm install
 
 
 ## Ejecución
@@ -20,10 +20,12 @@ npm install
 Para ejecutar la aplicación en tu entorno local, sigue estos pasos:
 
 1. Inicia el servidor de desarrollo utilizando el comando:
-ng serve
+
+        ng serve
 
 O, si prefieres utilizar npm:
-npm run start
+
+    npm run start
 
 2. Abre tu navegador web y accede a la siguiente URL:
 http://localhost:4200
